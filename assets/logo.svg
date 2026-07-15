@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="gman — a G-man (FBI agent) logo">
+  <title>gman</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3440"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a4453"/>
+      <stop offset="1" stop-color="#232a34"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="100" cy="100" r="94"/>
+    </clipPath>
+  </defs>
+
+  <!-- badge ring -->
+  <circle cx="100" cy="100" r="97" fill="#0d1117"/>
+  <circle cx="100" cy="100" r="94" fill="url(#bg)"/>
+
+  <g clip-path="url(#circle)">
+    <!-- shoulders / suit -->
+    <path d="M28 200 C28 156 60 138 100 138 C140 138 172 156 172 200 Z" fill="url(#suit)"/>
+    <!-- suit lapels -->
+    <path d="M100 138 L78 200 L94 200 L100 158 Z" fill="#1b212b"/>
+    <path d="M100 138 L122 200 L106 200 L100 158 Z" fill="#1b212b"/>
+    <!-- white collar -->
+    <path d="M100 138 L84 150 L100 162 Z" fill="#e6edf3"/>
+    <path d="M100 138 L116 150 L100 162 Z" fill="#e6edf3"/>
+    <!-- tie -->
+    <path d="M100 150 L94 158 L100 200 L106 158 Z" fill="#b0323a"/>
+
+    <!-- neck -->
+    <rect x="88" y="120" width="24" height="24" rx="6" fill="#d9a67e"/>
+    <!-- head -->
+    <circle cx="100" cy="98" r="34" fill="#e8b98d"/>
+
+    <!-- fedora: wide brim, then crown, then hat band -->
+    <ellipse cx="100" cy="76" rx="48" ry="14" fill="#20262f"/>
+    <ellipse cx="100" cy="76" rx="48" ry="14" fill="none" stroke="#11151b" stroke-width="1.5"/>
+    <path d="M64 76 C64 50 80 40 100 40 C120 40 136 50 136 76 C122 68 112 66 100 66 C88 66 78 68 64 76 Z" fill="#2b323d"/>
+    <path d="M70 71 C82 66 90 65 100 65 C110 65 118 66 130 71 L130 77 C118 72 110 71 100 71 C90 71 82 72 70 77 Z" fill="#11151b"/>
+    <ellipse cx="100" cy="47" rx="21" ry="6" fill="#343d49"/>
+
+    <!-- sunglasses -->
+    <rect x="70" y="92" width="26" height="15" rx="7" fill="#0d1117"/>
+    <rect x="104" y="92" width="26" height="15" rx="7" fill="#0d1117"/>
+    <rect x="94" y="97" width="12" height="4" rx="2" fill="#0d1117"/>
+    <rect x="73" y="95" width="9" height="4" rx="2" fill="#3d4756" opacity="0.7"/>
+    <rect x="107" y="95" width="9" height="4" rx="2" fill="#3d4756" opacity="0.7"/>
+
+    <!-- earpiece + coiled wire -->
+    <circle cx="133" cy="104" r="4" fill="#11151b"/>
+    <path d="M133 108 C138 118 130 126 134 136 C138 146 130 152 134 164" fill="none" stroke="#11151b" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- badge ring accent -->
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#3d4756" stroke-width="2"/>
+</svg>

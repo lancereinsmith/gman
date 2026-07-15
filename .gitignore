@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local Python pin (supported floor is set by requires-python in pyproject.toml)
+.python-version
+
+# uv lockfile committed; ignore caches
+.ruff_cache/
+.ty_cache/
+
+# Zensical / built docs
+site/
+
+# Excel output produced by `excel` / TUI export
+github_repos.xlsx
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+
+dev/

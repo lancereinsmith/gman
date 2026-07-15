@@ -1,0 +1,92 @@
+[project]
+name = "gman"
+version = "0.1.0"
+description = "List, manage, and export your GitHub repositories — CLI, TUI, and Excel export."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [
+    { name = "Lance Reinsmith", email = "info@k2rad.com" }
+]
+keywords = ["github", "cli", "tui", "repositories", "excel", "textual"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "openpyxl>=3.1.5",
+    "requests>=2.34.2",
+    "rich>=15.0.0",
+    "textual>=8.2.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/lreinsmith/gman"
+Repository = "https://github.com/lreinsmith/gman"
+Issues = "https://github.com/lreinsmith/gman/issues"
+Changelog = "https://github.com/lreinsmith/gman/blob/main/CHANGELOG.md"
+
+[project.scripts]
+gman = "gman.cli:main"
+gman-tui = "gman.cli:tui_main"
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "responses>=0.26.2",
+    "ruff>=0.15.21",
+    "ty>=0.0.59",
+    "zensical>=0.0.50",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",  # pycodestyle
+    "F",       # pyflakes
+    "I",       # isort
+    "B",       # bugbear
+    "UP",      # pyupgrade
+    "SIM",     # simplify
+    "N",       # pep8-naming
+    "RUF",     # ruff
+]
+ignore = [
+    "E501",    # line length handled by formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]
+
+[tool.ty.environment]
+python-version = "3.10"
+python = ".venv"
+root = ["./src"]
+
+[tool.ty.src]
+include = ["src"]
+
+[tool.ty.terminal]
+output-format = "concise"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
