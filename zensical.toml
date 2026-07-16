@@ -2,9 +2,9 @@
 site_name = "gman"
 site_description = "List, manage, and export your GitHub repositories from the terminal."
 site_author = "Lance Reinsmith"
-site_url = "https://lreinsmith.github.io/gman/"
+site_url = "https://lancereinsmith.github.io/gman/"
 copyright = "&copy; 2026 Lance Reinsmith"
-repo_url = "https://github.com/lreinsmith/gman"
+repo_url = "https://github.com/lancereinsmith/gman"
 
 docs_dir = "docs"
 site_dir = "site"

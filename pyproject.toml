@@ -1,6 +1,6 @@
 [project]
 name = "gman"
-version = "0.1.0"
+version = "0.1.1"
 description = "List, manage, and export your GitHub repositories — CLI, TUI, and Excel export."
 readme = "README.md"
 license = "MIT"
@@ -32,10 +32,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lreinsmith/gman"
-Repository = "https://github.com/lreinsmith/gman"
-Issues = "https://github.com/lreinsmith/gman/issues"
-Changelog = "https://github.com/lreinsmith/gman/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/lancereinsmith/gman"
+Repository = "https://github.com/lancereinsmith/gman"
+Issues = "https://github.com/lancereinsmith/gman/issues"
+Changelog = "https://github.com/lancereinsmith/gman/blob/main/CHANGELOG.md"
 
 [project.scripts]
 gman = "gman.cli:main"
