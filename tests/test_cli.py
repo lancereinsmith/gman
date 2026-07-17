@@ -31,6 +31,38 @@ def test_parser_has_all_commands() -> None:
         assert parser.parse_args(argv).command == cmd
 
 
+def test_bare_gman_launches_tui(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls: list[str] = []
+    monkeypatch.setattr(
+        cli.GitHubClient, "__init__", lambda self, **kw: setattr(self, "token", "t")
+    )
+    monkeypatch.setattr(cli, "cli_tui", lambda client: calls.append("tui") or 0)
+
+    assert cli.main([]) == 0
+    assert calls == ["tui"]
+
+
+def test_tui_flag_launches_tui(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls: list[str] = []
+    monkeypatch.setattr(
+        cli.GitHubClient, "__init__", lambda self, **kw: setattr(self, "token", "t")
+    )
+    monkeypatch.setattr(cli, "cli_tui", lambda client: calls.append("tui") or 0)
+
+    assert cli.main(["--tui"]) == 0
+    assert calls == ["tui"]
+
+
+def test_bare_gman_without_token_errors(monkeypatch: pytest.MonkeyPatch, capsys) -> None:
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.setattr(
+        cli.GitHubClient, "__init__", lambda self, **kw: setattr(self, "token", None)
+    )
+
+    assert cli.main([]) == 1
+    assert "no GitHub token" in capsys.readouterr().err
+
+
 def test_main_without_token_errors(monkeypatch: pytest.MonkeyPatch, capsys) -> None:
     monkeypatch.delenv("GITHUB_TOKEN", raising=False)
     monkeypatch.setattr(

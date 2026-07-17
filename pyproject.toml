@@ -1,6 +1,6 @@
 [project]
 name = "gman"
-version = "0.1.1"
+version = "0.1.2"
 description = "List, manage, and export your GitHub repositories — CLI, TUI, and Excel export."
 readme = "README.md"
 license = "MIT"

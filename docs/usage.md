@@ -294,9 +294,12 @@ issues, wiki, or releases).
 
 ### `tui`
 
-Launch the TUI (`gman-tui` is a direct shortcut).
+Launch the TUI. A bare `gman` (no subcommand) and `gman --tui` do the same
+thing, and `gman-tui` is a direct shortcut.
 
 ```bash
+gman
+gman --tui
 gman tui
 ```
 

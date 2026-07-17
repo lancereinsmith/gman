@@ -1,9 +1,11 @@
 # The TUI
 
 The fastest way to work through your repositories is the interactive table.
-Start it with either:
+Start it any of these ways:
 
 ```bash
+gman          # bare command, no subcommand
+gman --tui
 gman tui
 gman-tui
 ```

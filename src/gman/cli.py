@@ -681,7 +681,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="GitHub API base URL (overrides $GITHUB_API_URL); "
         "e.g. https://ghe.example.com/api/v3 for Enterprise.",
     )
-    sub = parser.add_subparsers(dest="command", required=True)
+    parser.add_argument(
+        "--tui",
+        action="store_true",
+        help="Launch the interactive TUI (same as the bare `gman` command).",
+    )
+    sub = parser.add_subparsers(dest="command", required=False)
 
     p_list = sub.add_parser("list", help="Print repos to stdout.")
     p_list.add_argument("--detailed", "-d", action="store_true")
@@ -790,6 +795,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     try:
+        if args.tui or args.command is None:
+            return cli_tui(client)
         if args.command == "list":
             aff = _resolve_affiliation(args.affiliation, args.include_orgs)
             return cli_list(client, args.detailed, args.as_json, aff)
