@@ -16,9 +16,12 @@ Excel — from a fast CLI or an interactive TUI.
 
 ## Features
 
-- **CLI** — `list`, `delete`, `archive`, `describe`, `excel` subcommands
+- **CLI** — `list`, `info`, `new`, `edit`, `describe`, `archive`, `delete`,
+  `sync`, `bulk`, `actions`, `auth`, and `excel` subcommands
 - **TUI** — interactive [Textual](https://textual.textualize.io/) table with
-  filter, open-in-browser, archive, edit-description, delete, and Excel export
+  filter, multi-select, open-in-browser, archive, edit-description, delete, and
+  Excel export; launch it with a bare `gman`, `gman --tui`, `gman tui`, or
+  `gman-tui`
 - **Excel export** — landscape `.xlsx` with banded rows, frozen header, and
   autofilter, sorted by Last Updated descending
 - **Works with GitHub Enterprise** via `--api-url` / `GITHUB_API_URL`
@@ -33,9 +36,9 @@ uv tool install gman        # or: pipx install gman  /  pip install gman
 
 ```bash
 gh auth login                  # or: export GITHUB_TOKEN=ghp_xxx
-gman tui                       # interactive UI
+gman                           # bare command opens the interactive TUI
+gman --tui                     # ...so does the flag (or `gman tui` / `gman-tui`)
 gman list --detailed           # or: list, excel, describe, delete, archive
-gman-tui                       # shortcut straight into the TUI
 ```
 
 The token is resolved from `--token`, then `$GITHUB_TOKEN`, then
